@@ -10,31 +10,31 @@ $dark-gray: #212121;
 $ok-green: #8bc34a;
 
 body{
-  padding-left: 0;
-  margin: 0;
   height: 100%;
+  margin: 0;
+  padding-left: 0;
+  font-family: Ubuntu;
   background-color: $primary-blue;
 }
 
 .warp{
-  min-height: 100%;
   position: relative;
+  min-height: 100%;
 }
 #header{
   display: block;
   height: 30px;
-  padding: 15px;
   margin: 0px;
-  background-color: $secondary-blue;
-  color: $white;
-  font-size: 16px;
+  padding: 15px;
   border: none;
-  font-family: Ubuntu;
+  font-size: 16px;
+  color: $white;
+  background-color: $secondary-blue;
   #status{
-    float:right;
     position: relative;
-    transform: translate(0, -50%);
     top: 50%;
+    transform: translate(0, -50%);
+    float:right;
     color: $ok-green;
   }
 }
@@ -43,23 +43,21 @@ body{
   padding-bottom: 75px;
   #title{
     display: block;
+    margin: 0;
     padding: 10px;
     padding-bottom: 0px;
-    font-size: 72px;
-    font-family: Ubuntu;
-    color: $white;
-    margin: 0;
+    font-size: 72px
     text-align: center
+    color: $white;
   }
 
   #subtitle{
-    color: $light-gray;
-    font-size: 18px;
-    font-family: Ubuntu;
-    text-align: center;
     display: block;
     margin: -10px 0 0 0;
     padding: 0;
+    font-size: 18px;
+    text-align: center;
+    color: $light-gray;
   }
   #buttons{
     display: flex;
@@ -70,54 +68,53 @@ body{
   }
   .button{
     position: relative;
+    top: 50%;
+    transform: translate(0, -50%);
     display: inline-block;
-    background-color: $primary-red;
-    border-radius: 75px;
     height: 100px;
     width: 100px;
     padding: 25px;
-    top: 50%;
-    transform: translate(0, -50%);
+    border-radius: 75px;
+    background-color: $primary-red;
 
     .icon{
-      margin: 0 auto;
-      width: 75px;
-      text-align: center;
-      display: inherit;
       position: relative;
       top: 50%;
       transform: translate(0,-50%);
+      display: inherit;
+      width: 75px;
+      margin: 0 auto;
       font-size: 72px;
+      text-align: center;
       color: $white;
     }
   }
 }
 
 #footer{
-  font-size: 18px;
-  width: 100%;
+  position: absolute;
   left: 0;
   bottom: 0;
-  position: absolute;
-  background-color: $dark-gray;
-  color: $white;
-  font-family: Ubuntu;
-  height: 60px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-around;
   align-items: baseline;
   align-content: center;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  color: $white;
+  background-color: $dark-gray;
   .box {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    padding: 15px;
-    display: inline-block;
+    position: relative
     top: 50%;
     transform: translate(0,-50%);
-    position: relative
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    display: inline-block;
+    padding: 15px;
   }
 
   #name{
