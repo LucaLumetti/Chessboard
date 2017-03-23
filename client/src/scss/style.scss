@@ -1,7 +1,19 @@
+$primary-blue:  #3f51b5;
+$secondary-blue: #283593;
+$tertiary-blue: #5c6bc0;
+$primary-red: #f44336;
+$white: #fff;
+$black: #000;
+$light-gray: #bbb;
+$gray: #333;
+$dark-gray: #212121;
+$ok-green: #8bc34a;
+
 body{
   padding-left: 0;
   margin: 0;
   height: 100%;
+  background-color: $primary-blue;
 }
 
 .warp{
@@ -13,8 +25,8 @@ body{
   height: 30px;
   padding: 15px;
   margin: 0px;
-  background-color: white;
-  color: #333;
+  background-color: $secondary-blue;
+  color: $white;
   font-size: 16px;
   border: none;
   font-family: Ubuntu;
@@ -23,6 +35,7 @@ body{
     position: relative;
     transform: translate(0, -50%);
     top: 50%;
+    color: $ok-green;
   }
 }
 
@@ -34,13 +47,13 @@ body{
     padding-bottom: 0px;
     font-size: 72px;
     font-family: Ubuntu;
-    color: #111;
+    color: $white;
     margin: 0;
     text-align: center
   }
 
   #subtitle{
-    color: #777;
+    color: $light-gray;
     font-size: 18px;
     font-family: Ubuntu;
     text-align: center;
@@ -48,15 +61,46 @@ body{
     margin: -10px 0 0 0;
     padding: 0;
   }
+  #buttons{
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    height: 300px;
+  }
+  .button{
+    position: relative;
+    display: inline-block;
+    background-color: $primary-red;
+    border-radius: 75px;
+    height: 100px;
+    width: 100px;
+    padding: 25px;
+    top: 50%;
+    transform: translate(0, -50%);
+
+    .icon{
+      margin: 0 auto;
+      width: 75px;
+      text-align: center;
+      display: inherit;
+      position: relative;
+      top: 50%;
+      transform: translate(0,-50%);
+      font-size: 72px;
+      color: $white;
+    }
+  }
 }
+
 #footer{
   font-size: 18px;
   width: 100%;
   left: 0;
   bottom: 0;
   position: absolute;
-  background-color: #333;
-  color: #fff;
+  background-color: $dark-gray;
+  color: $white;
   font-family: Ubuntu;
   height: 60px;
   display: flex;
@@ -92,11 +136,11 @@ body{
         font-weight: bold;
       }
       #code{
-        color: #5555ee;
+        color: $tertiary-blue;
         font-size: 20px;
       }
       #heart{
-        color: #ee2222;
+        color: $primary-red;
       }
     }
   }

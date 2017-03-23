@@ -1,7 +1,8 @@
 body {
   padding-left: 0;
   margin: 0;
-  height: 100%; }
+  height: 100%;
+  background-color: #3f51b5; }
 
 .warp {
   min-height: 100%;
@@ -12,8 +13,8 @@ body {
   height: 30px;
   padding: 15px;
   margin: 0px;
-  background-color: white;
-  color: #333;
+  background-color: #283593;
+  color: #fff;
   font-size: 16px;
   border: none;
   font-family: Ubuntu; }
@@ -22,7 +23,8 @@ body {
     position: relative;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
-    top: 50%; }
+    top: 50%;
+    color: #8bc34a; }
 
 #content {
   padding-bottom: 75px; }
@@ -32,17 +34,52 @@ body {
     padding-bottom: 0px;
     font-size: 72px;
     font-family: Ubuntu;
-    color: #111;
+    color: #fff;
     margin: 0;
     text-align: center; }
   #content #subtitle {
-    color: #777;
+    color: #bbb;
     font-size: 18px;
     font-family: Ubuntu;
     text-align: center;
     display: block;
     margin: -10px 0 0 0;
     padding: 0; }
+  #content #buttons {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: row;
+            flex-flow: row;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    height: 300px; }
+  #content .button {
+    position: relative;
+    display: inline-block;
+    background-color: #f44336;
+    border-radius: 75px;
+    height: 100px;
+    width: 100px;
+    padding: 25px;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%); }
+    #content .button .icon {
+      margin: 0 auto;
+      width: 75px;
+      text-align: center;
+      display: inherit;
+      position: relative;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+              transform: translate(0, -50%);
+      font-size: 72px;
+      color: #fff; }
 
 #footer {
   font-size: 18px;
@@ -50,7 +87,7 @@ body {
   left: 0;
   bottom: 0;
   position: absolute;
-  background-color: #333;
+  background-color: #212121;
   color: #fff;
   font-family: Ubuntu;
   height: 60px;
@@ -97,7 +134,7 @@ body {
       #footer #love span span {
         font-weight: bold; }
       #footer #love span #code {
-        color: #5555ee;
+        color: #5c6bc0;
         font-size: 20px; }
       #footer #love span #heart {
-        color: #ee2222; }
+        color: #f44336; }
