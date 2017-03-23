@@ -1,0 +1,31 @@
+{
+  "name": "chessboard-client",
+  "version": "1.0.0",
+  "description": "My exam project",
+  "main": "main.js",
+  "scripts": {
+    "start": "./node_modules/.bin/electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucaLumetti/Chessboard.git"
+  },
+  "author": "LucaLumetti",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/LucaLumetti/Chessboard/issues"
+  },
+  "homepage": "https://github.com/LucaLumetti/Chessboard#readme",
+  "dependencies": {
+    "autoprefixer": "^6.7.7",
+    "electron": "^1.6.2",
+    "gulp-sass": "^3.1.0"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-jsmin": "^0.1.5",
+    "gulp-postcss": "^6.4.0",
+    "gulp-rename": "^1.2.2"
+  }
+}

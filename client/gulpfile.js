@@ -6,17 +6,20 @@ var autoprefixer = require("autoprefixer")
 var sass = require("gulp-sass")
 
 gulp.task("sass", () =>
-  return gulp.src("assets/sass/website.scss")
-    .pipe(sass().on('error', sass.logError))
-    .pipe(postcss([autoprefixer()]))
-    .pipe(gulp.dest("client/dist/css"))
+  gulp.src("src/scss/*.scss")
+  .pipe(sass().on('error', sass.logError))
+  .pipe(postcss([autoprefixer()]))
+  .pipe(gulp.dest("src/css"))
 )
 
 gulp.task('js-min', () =>
-  gulp.src('client/src/js/*.js')
+  gulp.src('src/js/*.js')
   .pipe(jsmin())
   .pipe(rename({
     suffix: '.min'
   }))
-  .pipe(gulp.dest('client/dist/js'))
+  .pipe(gulp.dest('dist/js'))
 )
+gulp.task('watch', () => {
+  gulp.watch('src/scss/*', ['sass'])
+})

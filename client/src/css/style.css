@@ -1,0 +1,103 @@
+body {
+  padding-left: 0;
+  margin: 0;
+  height: 100%; }
+
+.warp {
+  min-height: 100%;
+  position: relative; }
+
+#header {
+  display: block;
+  height: 30px;
+  padding: 15px;
+  margin: 0px;
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  border: none;
+  font-family: Ubuntu; }
+  #header #status {
+    float: right;
+    position: relative;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    top: 50%; }
+
+#content {
+  padding-bottom: 75px; }
+  #content #title {
+    display: block;
+    padding: 10px;
+    padding-bottom: 0px;
+    font-size: 72px;
+    font-family: Ubuntu;
+    color: #111;
+    margin: 0;
+    text-align: center; }
+  #content #subtitle {
+    color: #777;
+    font-size: 18px;
+    font-family: Ubuntu;
+    text-align: center;
+    display: block;
+    margin: -10px 0 0 0;
+    padding: 0; }
+
+#footer {
+  font-size: 18px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  font-family: Ubuntu;
+  height: 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+  -ms-flex-line-pack: center;
+      align-content: center; }
+  #footer .box {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    padding: 15px;
+    display: inline-block;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    position: relative; }
+  #footer #name span {
+    margin-right: auto; }
+  #footer #info {
+    text-align: center; }
+  #footer #love {
+    text-align: right; }
+    #footer #love span {
+      margin-left: auto; }
+      #footer #love span span {
+        font-weight: bold; }
+      #footer #love span #code {
+        color: #5555ee;
+        font-size: 20px; }
+      #footer #love span #heart {
+        color: #ee2222; }

@@ -1,0 +1,103 @@
+body{
+  padding-left: 0;
+  margin: 0;
+  height: 100%;
+}
+
+.warp{
+  min-height: 100%;
+  position: relative;
+}
+#header{
+  display: block;
+  height: 30px;
+  padding: 15px;
+  margin: 0px;
+  background-color: white;
+  color: #333;
+  font-size: 16px;
+  border: none;
+  font-family: Ubuntu;
+  #status{
+    float:right;
+    position: relative;
+    transform: translate(0, -50%);
+    top: 50%;
+  }
+}
+
+#content{
+  padding-bottom: 75px;
+  #title{
+    display: block;
+    padding: 10px;
+    padding-bottom: 0px;
+    font-size: 72px;
+    font-family: Ubuntu;
+    color: #111;
+    margin: 0;
+    text-align: center
+  }
+
+  #subtitle{
+    color: #777;
+    font-size: 18px;
+    font-family: Ubuntu;
+    text-align: center;
+    display: block;
+    margin: -10px 0 0 0;
+    padding: 0;
+  }
+}
+#footer{
+  font-size: 18px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  font-family: Ubuntu;
+  height: 60px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: baseline;
+  align-content: center;
+  .box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 15px;
+    display: inline-block;
+    top: 50%;
+    transform: translate(0,-50%);
+    position: relative
+  }
+
+  #name{
+  span{
+    margin-right: auto;
+  }
+  }
+  #info{
+    text-align: center;
+  }
+  #love{
+    text-align: right;
+    span{
+      margin-left: auto;
+      span{
+        font-weight: bold;
+      }
+      #code{
+        color: #5555ee;
+        font-size: 20px;
+      }
+      #heart{
+        color: #ee2222;
+      }
+    }
+  }
+}

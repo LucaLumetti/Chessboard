@@ -17,15 +17,7 @@
   },
   "homepage": "https://github.com/LucaLumetti/Chessboard#readme",
   "dependencies": {
-    "autoprefixer": "^6.7.7",
     "chess.js": "^0.10.2",
-    "gulp-sass": "^3.1.0",
     "stockfish": "^6.0.5"
-  },
-  "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-jsmin": "^0.1.5",
-    "gulp-postcss": "^6.4.0",
-    "gulp-rename": "^1.2.2"
   }
 }
