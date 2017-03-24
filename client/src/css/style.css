@@ -1,50 +1,47 @@
 body {
-  padding-left: 0;
-  margin: 0;
   height: 100%;
-  background-color: #3f51b5; }
+  margin: 0;
+  padding-left: 0;
+  font-family: Ubuntu;
+  background-color: #ddd; }
 
 .warp {
-  min-height: 100%;
-  position: relative; }
+  position: relative;
+  min-height: 100%; }
 
 #header {
   display: block;
   height: 30px;
+  margin: 0;
   padding: 15px;
-  margin: 0px;
-  background-color: #283593;
-  color: #fff;
-  font-size: 16px;
   border: none;
-  font-family: Ubuntu; }
+  font-size: 16px;
+  color: #fff;
+  background-color: #fff; }
   #header #status {
-    float: right;
     position: relative;
+    top: 50%;
     -webkit-transform: translate(0, -50%);
             transform: translate(0, -50%);
-    top: 50%;
+    float: right;
     color: #8bc34a; }
 
 #content {
-  padding-bottom: 75px; }
+  height: 455px; }
   #content #title {
     display: block;
-    padding: 10px;
-    padding-bottom: 0px;
-    font-size: 72px;
-    font-family: Ubuntu;
-    color: #fff;
     margin: 0;
-    text-align: center; }
-  #content #subtitle {
-    color: #bbb;
-    font-size: 18px;
-    font-family: Ubuntu;
+    padding: 10px 10px 0;
+    font-size: 72px;
     text-align: center;
+    color: #fff; }
+  #content #subtitle {
     display: block;
-    margin: -10px 0 0 0;
-    padding: 0; }
+    margin: -10px 0 0;
+    padding: 0;
+    font-size: 18px;
+    text-align: center;
+    color: #ddd; }
   #content #buttons {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -60,37 +57,84 @@ body {
     height: 300px; }
   #content .button {
     position: relative;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
     display: inline-block;
-    background-color: #f44336;
-    border-radius: 75px;
     height: 100px;
     width: 100px;
     padding: 25px;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%); }
+    border-radius: 75px;
+    background-color: #333; }
     #content .button .icon {
-      margin: 0 auto;
-      width: 75px;
-      text-align: center;
-      display: inherit;
       position: relative;
       top: 50%;
       -webkit-transform: translate(0, -50%);
               transform: translate(0, -50%);
+      display: inherit;
+      width: 75px;
+      margin: 0 auto;
       font-size: 72px;
+      text-align: center;
+      color: #fff; }
+  #content #chessboard {
+    position: relative;
+    box-shadow: 0 0 10px 1px #aaa;
+    display: inline-block;
+    top: 27.5px;
+    margin-left: 70px; }
+  #content #logs {
+    display: inline-block;
+    float: right;
+    width: 40%;
+    height: 100%; }
+  #content table {
+    display: inline-table;
+    float: right;
+    top: 0;
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #aaa;
+    padding: 20px; }
+    #content table td,
+    #content table th {
+      text-align: left;
+      padding: 8px; }
+    #content table tr:nth-child(even) {
+      background-color: #fff; }
+  #content .row {
+    height: 50px; }
+  #content .square, #content .square-light, #content .square-dark {
+    height: 50px;
+    width: 50px;
+    display: inline-block;
+    margin: 0 0 -3px;
+    background-image: url("");
+    background-size: 50px; }
+    #content .square .coords, #content .square-light .coords, #content .square-dark .coords {
+      font-size: 10px;
+      float: right;
+      margin-top: -3px;
+      margin-right: 1px;
+      -webkit-transition: 0.2s linear;
+      transition: 0.2s linear;
+      opacity: 0.0;
+      display: table; }
+    #content .square:hover .coords, #content .square-light:hover .coords, #content .square-dark:hover .coords {
+      opacity: 0.8; }
+  #content .square-light {
+    background-color: #fff; }
+    #content .square-light .cords {
+      color: #333; }
+  #content .square-dark {
+    background-color: #333; }
+    #content .square-dark .coords {
       color: #fff; }
 
 #footer {
-  font-size: 18px;
-  width: 100%;
+  position: absolute;
   left: 0;
   bottom: 0;
-  position: absolute;
-  background-color: #212121;
-  color: #fff;
-  font-family: Ubuntu;
-  height: 60px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -106,23 +150,28 @@ body {
       -ms-flex-align: baseline;
           align-items: baseline;
   -ms-flex-line-pack: center;
-      align-content: center; }
+      align-content: center;
+  width: 100%;
+  height: 60px;
+  font-size: 18px;
+  color: #fff;
+  background-color: #212121; }
   #footer .box {
-    -webkit-box-flex: 1;
-        -ms-flex: 1;
-            flex: 1;
+    position: relative;
+    top: 50%;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    padding: 15px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
     display: inline-block;
-    top: 50%;
-    -webkit-transform: translate(0, -50%);
-            transform: translate(0, -50%);
-    position: relative; }
+    padding: 15px; }
   #footer #name span {
     margin-right: auto; }
   #footer #info {

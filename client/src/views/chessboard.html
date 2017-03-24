@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Chessboard</title>
+        <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/font-awesome.min.css">
+    </head>
+
+    <body>
+        <div class="wrap">
+            <div id="header">
+                <span id="status">
+                    <i class="fa fa-check-square" aria-hidden="true"></i>
+                    Connected to Raspberry
+                </span>
+            </div>
+
+            <div id="content">
+                <div id="chessboard"></div>
+                <div id="logs">
+                <table>
+                    <tr>
+                        <th>Human</th>
+                        <th>Computer</th>
+                    </tr>
+                    <tr>
+                      <td>A1</td>
+                      <td>B1</td>
+                    </tr>
+                    <tr>
+                      <td>A2</td>
+                      <td>B2</td>
+                    </tr>
+                    <tr>
+                      <td>A3</td>
+                      <td>B3</td>
+                    </tr>
+                </table>
+              </div>
+            </div>
+
+            <div id="footer">
+                <div id="name" class="box">
+                    <span>Chessboard</span>
+                </div>
+                <div id="info" class="box">
+                    <span>I.I.S. A. Volta Sassuolo</span>
+                </div>
+                <div id="love" class="box">
+                    <span>
+                        <i class="fa fa-code" id="code" aria-hidden="true"></i>
+                        &nbsp;with&nbsp;
+                        <i class="fa fa-heart" id="heart" aria-hidden="true"></i>
+                        &nbsp;by LucaLumetti
+                    </span>
+                </div>
+            </div>
+        </div>
+        <script src="../js/chessboard.js" charset="utf-8"></script>
+    </body>
+
+</html>

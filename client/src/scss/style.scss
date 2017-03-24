@@ -1,144 +1,224 @@
-$primary-blue:  #3f51b5;
-$secondary-blue: #283593;
-$tertiary-blue: #5c6bc0;
-$primary-red: #f44336;
-$white: #fff;
-$black: #000;
-$light-gray: #bbb;
-$gray: #333;
-$dark-gray: #212121;
-$ok-green: #8bc34a;
+@import 'color-palette';
+@import 'settings';
 
-body{
-  height: 100%;
-  margin: 0;
-  padding-left: 0;
-  font-family: Ubuntu;
-  background-color: $primary-blue;
-}
-
-.warp{
-  position: relative;
-  min-height: 100%;
-}
-#header{
-  display: block;
-  height: 30px;
-  margin: 0px;
-  padding: 15px;
-  border: none;
-  font-size: 16px;
-  color: $white;
-  background-color: $secondary-blue;
-  #status{
-    position: relative;
-    top: 50%;
-    transform: translate(0, -50%);
-    float:right;
-    color: $ok-green;
-  }
-}
-
-#content{
-  padding-bottom: 75px;
-  #title{
-    display: block;
+body {
+    height: 100%;
     margin: 0;
-    padding: 10px;
-    padding-bottom: 0px;
-    font-size: 72px
-    text-align: center
-    color: $white;
-  }
-
-  #subtitle{
-    display: block;
-    margin: -10px 0 0 0;
-    padding: 0;
-    font-size: 18px;
-    text-align: center;
-    color: $light-gray;
-  }
-  #buttons{
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    flex-wrap: nowrap;
-    height: 300px;
-  }
-  .button{
-    position: relative;
-    top: 50%;
-    transform: translate(0, -50%);
-    display: inline-block;
-    height: 100px;
-    width: 100px;
-    padding: 25px;
-    border-radius: 75px;
-    background-color: $primary-red;
-
-    .icon{
-      position: relative;
-      top: 50%;
-      transform: translate(0,-50%);
-      display: inherit;
-      width: 75px;
-      margin: 0 auto;
-      font-size: 72px;
-      text-align: center;
-      color: $white;
-    }
-  }
+    padding-left: 0;
+    font-family: $default_font;
+    background-color: $background_c;
 }
 
-#footer{
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  justify-content: space-around;
-  align-items: baseline;
-  align-content: center;
-  width: 100%;
-  height: 60px;
-  font-size: 18px;
-  color: $white;
-  background-color: $dark-gray;
-  .box {
-    position: relative
-    top: 50%;
-    transform: translate(0,-50%);
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    display: inline-block;
-    padding: 15px;
-  }
+.warp {
+    position: relative;
+    min-height: 100%;
+}
 
-  #name{
-  span{
-    margin-right: auto;
-  }
-  }
-  #info{
-    text-align: center;
-  }
-  #love{
-    text-align: right;
-    span{
-      margin-left: auto;
-      span{
-        font-weight: bold;
-      }
-      #code{
-        color: $tertiary-blue;
-        font-size: 20px;
-      }
-      #heart{
-        color: $primary-red;
-      }
+#header {
+    display: block;
+    height: 30px;
+    margin: 0;
+    padding: 15px;
+    border: none;
+    font-size: 16px;
+    color: $white;
+    background-color: $header_c;
+
+    #status {
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+        float: right;
+        color: $ok-green;
     }
-  }
+}
+
+#content {
+    height: 455px;
+
+    #title {
+        display: block;
+        margin: 0;
+        padding: 10px 10px 0;
+        font-size: 72px;
+        text-align: center;
+        color: $white;
+    }
+
+    #subtitle {
+        display: block;
+        margin: -10px 0 0;
+        padding: 0;
+        font-size: 18px;
+        text-align: center;
+        color: $light-gray;
+    }
+
+    #buttons {
+        display: flex;
+        flex-flow: row;
+        justify-content: space-around;
+        flex-wrap: nowrap;
+        height: 300px;
+    }
+
+    .button {
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+        display: inline-block;
+        height: 100px;
+        width: 100px;
+        padding: 25px;
+        border-radius: 75px;
+        background-color: $button_c;
+
+        .icon {
+            position: relative;
+            top: 50%;
+            transform: translate(0,-50%);
+            display: inherit;
+            width: 75px;
+            margin: 0 auto;
+            font-size: 72px;
+            text-align: center;
+            color: $white;
+        }
+    }
+
+    #chessboard {
+        position: relative;
+        box-shadow: 0 0 10px 1px #aaa;
+        display: inline-block;
+        top: 27.5px;
+        margin-left: 70px;
+    }
+
+    #logs {
+        display: inline-block;
+        float: right;
+        width: 40%;
+        height: 100%;
+    }
+
+    table {
+        display: inline-table;
+        float: right;
+        top: 0;
+        width: 100%;
+        border-collapse: collapse;
+        background-color: #aaa;
+        padding: 20px;
+
+        td,
+        th {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even) {
+            background-color: $white;
+        }
+    }
+
+    .row{
+      height: 50px;
+    }
+    .square {
+        height: 50px;
+        width: 50px;
+        display: inline-block;
+        margin: 0 0 -3px;
+        background-image: url('');
+        background-size: 50px;
+        .coords {
+            font-size: 10px;
+            float: right;
+            margin-top: -3px;
+            margin-right: 1px;
+            transition: 0.2s linear;
+            opacity: 0.0;
+            display: table;
+        }
+        &:hover{
+          .coords{
+            opacity: 0.8;
+          }
+        }
+    }
+
+    .square-light {
+        @extend .square;
+        background-color: $white;
+        .cords{
+          color: $gray;
+        }
+    }
+
+    .square-dark {
+        @extend .square;
+        background-color: $gray;
+        .coords{
+          color: $white;
+        }
+    }
+}
+
+#footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: center;
+    width: 100%;
+    height: 60px;
+    font-size: 18px;
+    color: $white;
+    background-color: $footer_c;
+
+    .box {
+        position: relative;
+        top: 50%;
+        transform: translate(0,-50%);
+        display: flex;
+        justify-content: center;
+        flex: 1;
+        display: inline-block;
+        padding: 15px;
+    }
+
+    #name {
+        span {
+            margin-right: auto;
+        }
+    }
+
+    #info {
+        text-align: center;
+    }
+
+    #love {
+        text-align: right;
+
+        span {
+            margin-left: auto;
+
+            span {
+                font-weight: bold;
+            }
+
+            #code {
+                color: $tertiary-blue;
+                font-size: 20px;
+            }
+
+            #heart {
+                color: $primary-red;
+            }
+        }
+    }
 }
