@@ -36,3 +36,26 @@ var setPiece = (coords, piece) => {
   var sq = document.getElementById(`sq_${coords[0]}-${coords[1]}`)
   sq.style.backgroundImage = `url('../img/chesspieces/${piece}.png')`
 }
+
+Number.prototype.formatTime = function () {
+  var s = '0' + this;
+  return s.substr(s.length - 2);
+};
+
+var timers = document.getElementsByClassName('time');
+timers = Object.keys(timers).map(function (key) {
+  return timers[key];
+});
+
+var start_time = 60
+var printTimer = () => {
+  timers.forEach((v, i) => {
+    v.innerHTML =
+      `${Math.floor(start_time/60)}:${(start_time%60).formatTime()}`
+  })
+}
+printTimer();
+var timer_intv = setInterval(() => {
+  start_time--;
+  printTimer();
+}, 1000)

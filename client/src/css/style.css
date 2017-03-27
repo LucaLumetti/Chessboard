@@ -85,17 +85,35 @@ body {
     margin-left: 70px; }
   #content #logs {
     display: inline-block;
-    float: right;
     width: 40%;
-    height: 100%; }
+    float: right;
+    padding: 27.5px; }
+    #content #logs .user-info {
+      height: 36px;
+      padding: 9px; }
+      #content #logs .user-info .name {
+        font-size: 32px;
+        padding: 8px;
+        margin: -9px;
+        float: left; }
+      #content #logs .user-info .time {
+        font-size: 32px;
+        float: right;
+        background-color: #fff;
+        padding: 8px;
+        margin: -9px;
+        margin-top: -10px;
+        width: 100px;
+        text-align: center;
+        border: 1px solid #bbb; }
   #content table {
     display: inline-table;
-    float: right;
     top: 0;
     width: 100%;
     border-collapse: collapse;
     background-color: #aaa;
-    padding: 20px; }
+    padding: 20px;
+    border: 1px solid #bbb; }
     #content table td,
     #content table th {
       text-align: left;

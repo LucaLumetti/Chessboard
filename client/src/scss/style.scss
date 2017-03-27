@@ -96,20 +96,43 @@ body {
 
     #logs {
         display: inline-block;
-        float: right;
         width: 40%;
-        height: 100%;
+        float: right;
+        padding: 27.5px;
+
+        .user-info {
+            height: 36px;
+            padding: 9px;
+
+            .name {
+                font-size: 32px;
+                padding: 8px;
+                margin: -9px;
+                float: left;
+            }
+
+            .time {
+                font-size: 32px;
+                float: right;
+                background-color: $white;
+                padding: 8px;
+                margin: -9px;
+                margin-top: -10px;
+                width: 100px;
+                text-align: center;
+                border: 1px solid #bbb;
+            }
+        }
     }
 
     table {
         display: inline-table;
-        float: right;
         top: 0;
         width: 100%;
         border-collapse: collapse;
         background-color: #aaa;
         padding: 20px;
-
+        border: 1px solid #bbb;
         td,
         th {
             text-align: left;
@@ -121,9 +144,10 @@ body {
         }
     }
 
-    .row{
-      height: 50px;
+    .row {
+        height: 50px;
     }
+
     .square {
         height: 50px;
         width: 50px;
@@ -131,6 +155,7 @@ body {
         margin: 0 0 -3px;
         background-image: url('');
         background-size: 50px;
+
         .coords {
             font-size: 10px;
             float: right;
@@ -140,26 +165,29 @@ body {
             opacity: 0.0;
             display: table;
         }
-        &:hover{
-          .coords{
-            opacity: 0.8;
-          }
+
+        &:hover {
+            .coords {
+                opacity: 0.8;
+            }
         }
     }
 
     .square-light {
         @extend .square;
         background-color: $white;
-        .cords{
-          color: $gray;
+
+        .cords {
+            color: $gray;
         }
     }
 
     .square-dark {
         @extend .square;
         background-color: $gray;
-        .coords{
-          color: $white;
+
+        .coords {
+            color: $white;
         }
     }
 }

@@ -21,5 +21,6 @@ gulp.task('js-min', () =>
   .pipe(gulp.dest('dist/js'))
 )
 gulp.task('watch', () => {
+  gulp.start('sass')
   gulp.watch('src/scss/*', ['sass'])
 })
