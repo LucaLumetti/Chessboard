@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <title>Chessboard</title>
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/chessboard-0.3.0.min.css">
         <link rel="stylesheet" href="../css/font-awesome.min.css">
     </head>
 
@@ -18,7 +19,7 @@
             </div>
 
             <div id="content">
-                <div id="chessboard"></div>
+                <div id="chessboard" style="width: 380px"></div>
                 <div id="logs">
                   <div class="user-info">
                     <span class="name">Computer</span>
@@ -66,7 +67,12 @@
                 </div>
             </div>
         </div>
+        <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+        <script src="../js/jquery-1.10.1.min.js" charset="utf-8"></script>
+        <script src="../js/chessboard-0.3.0.min.js" charset="utf-8"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.3/socket.io.js"></script>
         <script src="../js/chessboard.js" charset="utf-8"></script>
+        <script>if (window.module) module = window.module;</script>
     </body>
 
 </html>

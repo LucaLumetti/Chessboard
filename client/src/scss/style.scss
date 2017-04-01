@@ -86,13 +86,14 @@ body {
         }
     }
 
-    #chessboard {
+  #chessboard {
         position: relative;
         box-shadow: 0 0 10px 1px #aaa;
         display: inline-block;
         top: 27.5px;
         margin-left: 70px;
     }
+
 
     #logs {
         display: inline-block;
