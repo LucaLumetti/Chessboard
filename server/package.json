@@ -18,6 +18,9 @@
   "homepage": "https://github.com/LucaLumetti/Chessboard#readme",
   "dependencies": {
     "chess.js": "^0.10.2",
+    "expres": "^0.0.5",
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3",
     "stockfish": "^6.0.5"
   }
 }
