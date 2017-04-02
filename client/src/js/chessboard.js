@@ -21,3 +21,8 @@ socket.on('validated-move', (response) => {
 socket.on('opp-move', (fen)=>{
   chessboard.position(fen, true)
 })
+
+socket.on('keep-alive',(state)=>{
+  if(state)
+  socket.emit('_', true)
+})
