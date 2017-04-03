@@ -6,40 +6,127 @@ var chess = new Chess()
 
 var iterations = 0
 
-var pieceValue = (piece, color) => {
+var pawnEvalWhite = [
+        [0, 0, 0, 0, 0, 0, 0, 0],
+        [50, 50, 50, 50, 50, 50, 50, 50],
+        [10, 10, 20, 30, 30, 20, 10, 10],
+        [5, 5, 10, 25, 25, 10, 5, 5],
+        [0, 0, 0, 20, 20, 0, 0, 0],
+        [5, -5, -10, 0, 0, -10, -5, 5],
+        [5, 10, 10, -20, -20, 10, 10, 5],
+        [0, 0, 0, 0, 0, 0, 0, 0]
+    ];
+
+var knightEval = [
+            [-50, -40, -30, -30, -30, -30, -40, -50],
+            [-40, -20, 0, 0, 0, 0, -20, -40],
+            [-30, 0, 10, 15, 15, 10, 0, -30],
+            [-30, 5, 15, 20, 20, 15, 5, -30],
+            [-30, 0, 15, 20, 20, 15, 0, -30],
+            [-30, 5, 10, 15, 15, 10, 5, -30],
+            [-40, -20, 0, 5, 5, 0, -20, -40],
+            [-50, -40, -30, -30, -30, -30, -40, -50]
+        ];
+
+var bishopEvalWhite = [
+            [-20, -10, -10, -10, -10, -10, -10, -20],
+            [-10, 0, 0, 0, 0, 0, 0, -10],
+            [-10, 0, 5, 10, 10, 5, 0, -10],
+            [-10, 5, 5, 10, 10, 5, 5, -10],
+            [-10, 0, 10, 10, 10, 10, 0, -10],
+            [-10, 10, 10, 10, 10, 10, 10, -10],
+            [-10, 5, 0, 0, 0, 0, 5, -10],
+            [-20, -10, -10, -10, -10, -10, -10, -20]
+        ];
+
+var rookEvalWhite = [
+            [0, 0, 0, 0, 0, 0, 0, 0],
+            [5, 10, 10, 10, 10, 10, 10, 5],
+            [-5, 0, 0, 0, 0, 0, 0, -5],
+            [-5, 0, 0, 0, 0, 0, 0, -5],
+            [-5, 0, 0, 0, 0, 0, 0, -5],
+            [-5, 0, 0, 0, 0, 0, 0, -5],
+            [-5, 0, 0, 0, 0, 0, 0, -5],
+            [0, 0, 0, 5, 5, 0, 0, 0]
+        ];
+
+var queenEval = [
+            [-20, -10, -10, -5, -5, -10, -10, -20],
+            [-10, 0, 0, 0, 0, 0, 0, -10],
+            [-10, 0, 5, 5, 5, 5, 0, -10],
+            [-5, 0, 5, 5, 5, 5, 0, -5],
+            [0, 0, 5, 5, 5, 5, 0, -5],
+            [-10, 5, 5, 5, 5, 5, 0, -10],
+            [-10, 0, 5, 0, 0, 0, 0, -10],
+            [-20, -10, -10, -5, -5, -10, -10, -20]
+        ];
+
+var kingEvalWhite = [
+            [-30, -40, -40, -50, -50, -40, -40, -30],
+            [-30, -40, -40, -50, -50, -40, -40, -30],
+            [-30, -40, -40, -50, -50, -40, -40, -30],
+            [-30, -40, -40, -50, -50, -40, -40, -30],
+            [-20, -30, -30, -40, -40, -30, -30, -20],
+            [-10, -20, -20, -20, -20, -20, -20, -10],
+            [20, 20, 0, 0, 0, 0, 20, 20],
+            [20, 30, 10, 0, 0, 10, 30, 20]
+        ];
+
+var pawnEvalBlack = pawnEvalWhite.slice().reverse()
+var bishopEvalBlack = bishopEvalWhite.slice().reverse()
+var rookEvalBlack = rookEvalWhite.slice().reverse()
+var kingEvalBlack = kingEvalWhite.slice().reverse()
+
+var piecePosValue = (piece) => {
+
+}
+
+var pieceValue = (piece, color,x,y) => {
   var value = 0
   color = color == 'w' ? 1 : -1
   piece = piece.toLowerCase()
   switch (piece) {
     case 'p':
-      value = 100 * color
+    if(color)
+      value = 100 + pawnEvalWhite[x][y]
+    else
+      value = 100 + pawnEvalBlack[x][y]
       break
     case 'q':
-      value = 900 * color
+      value = 900 + queenEval[x][y]
       break
     case 'b':
-      value = 330 * color
+    if(color)
+      value = 330 + bishopEvalWhite[x][y]
+    else
+      value = 330 + bishopEvalBlack[x][y]
       break
     case 'n':
-      value = 320 * color
+      value = 320 + knightEval[x][y]
       break
     case 'r':
-      value = 500 * color
+    if(color)
+      value = 500 + rookEvalWhite[x][y]
+    else
+      value = 500 + rookEvalBlack[x][y]
       break
     case 'k':
-      value = 0 * color
+    if(color)
+      value = 0 + kingEvalWhite[x][y]
+    else
+      value = 0 + kingEvalBlack[x][y]
       break
   }
   //console.log('Value of ' + piece + ' is ' + value)
-  return value
+  return value*color
 }
 
 var evalutateBoard = (board) => {
   var value = 0
-  board.forEach((row) =>
-    row.forEach((square) => {
+  board.forEach((row,i) =>
+    row.forEach((square,j) => {
       if (square !== null)
-        value += pieceValue(square.type, square.color)
+        value += pieceValue(square.type, square.color,i,j)
     })
   )
   return value
@@ -67,14 +154,14 @@ var minimaxRoot = function (depth, game, isMaximisingPlayer) {
 
 var minimax = function (depth, game, alpha, beta, isMaximisingPlayer) {
   iterations++
-  //console.log(iterations)
+  console.log(iterations)
   if (depth === 0) {
     return -evalutateBoard(game.board())
   }
   var newGameMoves = game.moves()
   if (isMaximisingPlayer) {
     var bestMove = -Infinity
-    newGameMoves.forEach((move)=>{
+    newGameMoves.forEach((move) => {
       game.move(move)
       bestMove = Math.max(bestMove, minimax(depth - 1, game, alpha, beta, !
         isMaximisingPlayer))
@@ -86,11 +173,11 @@ var minimax = function (depth, game, alpha, beta, isMaximisingPlayer) {
     return bestMove
   } else {
     var bestMove = Infinity
-    newGameMoves.forEach((move)=>{
+    newGameMoves.forEach((move) => {
       game.move(move)
       bestMove = Math.min(bestMove, minimax(depth - 1, game, alpha, beta, !
         isMaximisingPlayer))
-        game.undo()
+      game.undo()
       beta = Math.min(beta, bestMove)
       if (beta <= alpha)
         return bestMove
@@ -105,9 +192,9 @@ app.get('/', function (req, res) {
 
 io.on('connection', function (socket) {
   console.log('a user connected')
-  var keepAlive = setInterval(()=>{
+  var keepAlive = setInterval(() => {
     socket.emit('keep-alive', true)
-  },5000)
+  }, 5000)
   socket.on('validate-move', function (mv) {
     var move = chess.move({
       from: mv[0],

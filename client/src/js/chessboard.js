@@ -19,6 +19,7 @@ socket.on('validated-move', (response) => {
 })
 
 socket.on('opp-move', (fen)=>{
+  console.log(fen)
   chessboard.position(fen, true)
 })
 
