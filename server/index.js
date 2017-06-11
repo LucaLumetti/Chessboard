@@ -12,7 +12,7 @@ let HTTP_PORT = 3000
 let workerResults = [[], []]
 let workers = []
 let totalIterations = 0
-
+let movesToWait = 0
 let checkMove = (from, to) => {
   let move = chess.move({
     from: from,
@@ -43,6 +43,7 @@ io.on('connection', function (socket) {
       msg = JSON.parse(msg)
       let move = msg.move
       let value = msg.value
+      let totalChunks = msg.totalChunks
 
       if (workerResults[0].indexOf(move) === -1) {
         totalIterations += msg.iterations
@@ -50,8 +51,7 @@ io.on('connection', function (socket) {
         workerResults[1].push(value)
       }
 
-      if (workerResults[0].length === NUM_WORKERS) {
-        console.log(workerResults)
+      if (workerResults[0].length === totalChunks) {
         let minValue = Math.min(...workerResults[1])
         let minIndex = workerResults[1].indexOf(minValue)
         let bestMove = workerResults[0][minIndex]
@@ -71,7 +71,8 @@ io.on('connection', function (socket) {
       totalIterations = 0
       workerResults = [[], []]
       let movesList = chess.moves()
-      let chunksSize = Math.floor(movesList.length / NUM_WORKERS)
+      let nMoves = movesList.length
+      let chunksSize = Math.ceil(movesList.length / NUM_WORKERS)
       let chunks = []
       let chessFen = chess.fen()
 
@@ -79,12 +80,14 @@ io.on('connection', function (socket) {
         chunks.push(movesList.splice(0, chunksSize))
 
       console.time('ChessboardAI Time')
+      console.log((nMoves > 4) ? 5 : nMoves)
 
-      workers.forEach((worker, i) => {
-        worker.send(JSON.stringify({
+      chunks.forEach((chunk,i)=>{
+        workers[i].send(JSON.stringify({
           id: i,
           fen: chessFen,
-          moves: chunks[i]
+          moves: chunk,
+          totalChunks: (nMoves > 4) ? 5 : nMoves
         }))
       })
     }

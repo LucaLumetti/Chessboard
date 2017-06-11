@@ -128,6 +128,7 @@ process.on('message', (msg) => {
   let idt = msg.id
   let moves = msg.moves
   let fen = msg.fen
+  let totalChunks = msg.totalChunks
   chess.load(fen)
 
   process.title = `ChBo_Worker#${idt}`
@@ -141,6 +142,7 @@ process.on('message', (msg) => {
   process.send(JSON.stringify({
     'move': best.move,
     'value': best.value,
-    'iterations': best.iterations
+    'iterations': best.iterations,
+    'totalChunks' : totalChunks
   }))
 })

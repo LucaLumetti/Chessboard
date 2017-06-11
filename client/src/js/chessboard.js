@@ -1,6 +1,6 @@
-var socket = io('http://localhost:3000');
+let socket = io('http://localhost:3000');
 
-var cfg = {
+let cfg = {
   draggable: true,
   dropOffBoard: 'snapback',
   position: 'start',
@@ -9,11 +9,11 @@ var cfg = {
     console.log('request validating ' + source + '-' + target)
   }
 };
-var chessboard = ChessBoard('chessboard', cfg);
+let chessboard = ChessBoard('chessboard', cfg);
 
 socket.on('validated-move', (response) => {
-  var valid = response[0]
-  var fen = response[1]
+  let valid = response[0]
+  let fen = response[1]
   console.log(valid)
   chessboard.position(fen,true)
 })
