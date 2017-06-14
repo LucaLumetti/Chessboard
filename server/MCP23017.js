@@ -22,7 +22,7 @@ var board = [[0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0,
   0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0,
   0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0], [0, 0, 0, 0, 0, 0, 0, 0]]
 
-let mcps_addr = [0x20, 0x21, 0x22, 0x23]
+let mcps_addr = [0x23, 0x22, 0x21, 0x20]
 
 class MCP23017 {
   constructor(opts) {
@@ -44,7 +44,7 @@ class MCP23017 {
     }
   }
 
-  function card2chess(x,y){
+  cardTochess(x,y){
     return String.fromCharCode(97 + x) + (y+1);
   }
   readPin(pin, port, callback) {
@@ -132,5 +132,6 @@ setInterval(function () {
       process.stdout.write(sq + ' ')
     })
     process.stdout.write('\n')
-  }) console.log("\n==============\n")
-}, 5000)
+  })
+  console.log("\n==============\n")
+}, 100)
